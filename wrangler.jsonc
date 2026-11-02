@@ -1,0 +1,11 @@
+{
+  "name": "clipandpost",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    { "pattern": "clipandpost.lorecraft.io", "custom_domain": true }
+  ]
+}
