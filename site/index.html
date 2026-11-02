@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clip &amp; Post · Let's Go Viral</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>Clip &amp; Post · Let's Go Viral</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -27,8 +27,9 @@ img{display:block}
 nav.top{position:fixed;top:16px;left:0;right:0;z-index:20;pointer-events:none}
 nav.top .in{max-width:1360px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
 .pill{pointer-events:auto;display:flex;align-items:center;gap:6px;background:rgba(247,244,239,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:999px;padding:6px;box-shadow:0 0 0 1px var(--line),0 10px 30px -18px rgba(26,21,25,.4)}
-.wm{display:flex;align-items:center;padding:4px 18px 4px 14px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:26px;letter-spacing:.01em;text-transform:lowercase;line-height:1}
-.wm .p{display:inline-grid;place-items:center;width:22px;height:28px;margin:0 4px;background:var(--acc);color:#fff;transform:skewX(-12deg);border-radius:3px;font-size:22px}
+.wm{display:flex;align-items:baseline;padding:4px 18px 6px 16px;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.055em;line-height:1;white-space:nowrap;color:var(--ink);text-decoration:none}
+.wm .amp{font-size:.7em;color:var(--acc);margin:0 .045em 0 .03em;letter-spacing:0}
+.pill.wm{gap:0}
 .links a{font-size:14px;font-weight:500;padding:9px 14px;border-radius:999px;transition:background .4s var(--ease)}
 .links a:hover{background:var(--bg2)}
 .btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:7px 7px 7px 22px;border-radius:999px;transition:transform .5s var(--ease);white-space:nowrap}
@@ -231,7 +232,7 @@ footer .cp{font-size:13px;color:var(--mut)}
 </head>
 <body class="pre">
 <nav class="top"><div class="in">
-  <a href="#top" class="pill wm" aria-label="Clip & Post">clip<span class="p">+</span>post</a>
+  <a href="#top" class="pill wm" aria-label="Clip & Post">clip<span class="amp">&amp;</span>post</a>
   <div class="pill"><div class="links" id="links"></div><a class="btn sm book" target="_blank" rel="noopener">Book a Call <span class="ic"><i class="ph-bold ph-arrow-up-right"></i></span></a><button class="menu-b" id="mb" aria-label="Menu"><i class="ph-bold ph-list"></i></button></div>
 </div></nav>
 <div class="mm" id="mm"></div>
@@ -295,7 +296,7 @@ footer .cp{font-size:13px;color:var(--mut)}
 </div>
 
 <footer><div class="wrap in">
-  <a href="#top" class="wm" style="padding:0">clip<span class="p">+</span>post</a>
+  <a href="#top" class="wm" style="padding:0">clip<span class="amp">&amp;</span>post</a>
   <div class="lk" id="flk"></div>
   <div class="cp" id="fcp"></div>
 </div></footer>
