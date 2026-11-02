@@ -1,29 +1,381 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clip &amp; Post · Let's Go Viral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<script src="kit/content.js"></script>
+<style>
+/* fx1 · Plane → Floor. Top (nav → strategy) from rw3 Tilted Plane; bottom (process → footer) from hy8 Tilted Floor,
+   re-set in rw3's palette (rose on warm white) and type system (Big Shoulders / Hanken Grotesk / IBM Plex Mono). */
+:root{--bg:#f7f4ef;--bg2:#eee9e1;--ink:#1a1519;--mut:#736b70;--acc:#e5195e;--line:rgba(26,21,25,.13);--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.disp,.D{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-.005em;line-height:.86}
+.mono,.lab{font-family:'IBM Plex Mono',monospace}
+.lab{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 40px}
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+nav.top{position:fixed;top:16px;left:0;right:0;z-index:20;pointer-events:none}
+nav.top .in{max-width:1360px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+.pill{pointer-events:auto;display:flex;align-items:center;gap:6px;background:rgba(247,244,239,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:999px;padding:6px;box-shadow:0 0 0 1px var(--line),0 10px 30px -18px rgba(26,21,25,.4)}
+.wm{display:flex;align-items:center;padding:4px 18px 4px 14px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:26px;letter-spacing:.01em;text-transform:lowercase;line-height:1}
+.wm .p{display:inline-grid;place-items:center;width:22px;height:28px;margin:0 4px;background:var(--acc);color:#fff;transform:skewX(-12deg);border-radius:3px;font-size:22px}
+.links a{font-size:14px;font-weight:500;padding:9px 14px;border-radius:999px;transition:background .4s var(--ease)}
+.links a:hover{background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:7px 7px 7px 22px;border-radius:999px;transition:transform .5s var(--ease);white-space:nowrap}
+.btn .ic{width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;transition:transform .5s var(--ease)}
+.btn:hover .ic{transform:translate(2px,-1px) scale(1.06)}
+.btn:active{transform:scale(.98)}
+.btn.sm{font-size:14px;padding:5px 5px 5px 16px}.btn.sm .ic{width:30px;height:30px}
+.menu-b,.x-b{all:unset;cursor:pointer;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:none;place-items:center;font-size:18px}
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    
-    <script type="module" crossorigin src="/assets/index-h7KcpMyR.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-pB2Q_glJ.css">
-  
-<meta name="twitter:title" content="Lovable App"><meta name="twitter:description" content="Lovable Generated Project"><meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png"></head>
+/* ───────── TOP · rw3 Tilted Plane ───────── */
+.hero{position:relative;min-height:100dvh;overflow:hidden;padding-top:104px}
+.hero .top{max-width:1360px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.hero h1{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(84px,17.3vw,252px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;margin-left:-.03em}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero h1 .l{display:inline-block;clip-path:inset(0 0 0 0)}
+.hero h1 .l span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
+.on .hero h1 .l span{transform:none}
+.on .hero h1 .l:nth-child(2) span{transition-delay:.07s}.on .hero h1 .l:nth-child(3) span{transition-delay:.14s}
+.hero .row{display:flex;justify-content:space-between;align-items:center;gap:32px;margin-top:26px}
+.hero .sub{font-size:21px;line-height:1.4;color:var(--mut);max-width:36ch}
+.hero .sub b{color:var(--ink);font-weight:700}
+.hero .rt{display:flex;align-items:center;gap:22px}
+.stage{position:absolute;left:0;right:0;bottom:-40px;height:62%;perspective:1400px;perspective-origin:50% 0%;z-index:1;mask-image:linear-gradient(180deg,transparent,#000 22%);-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%)}
+.plane{position:absolute;left:-30%;right:-30%;top:4%;transform-origin:50% 0;transform:rotateX(26deg) rotateZ(-7deg);display:grid;gap:14px;transition:transform 1.6s var(--ease)}
+.pre .plane{transform:rotateX(70deg) rotateZ(-7deg) translateY(120px)}
+.prow{display:flex;gap:14px;width:max-content;will-change:transform}
+.prow .clip{width:170px}
 
-  <body>
-    <div id="root"></div>
-  
+.clip{container-type:inline-size;position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#222;isolation:isolate;flex:none;display:block}
+.clip .bg{position:absolute;inset:-20%;background-size:cover;background-position:center;filter:blur(22px) saturate(1.2) brightness(.78);transform:scale(1.1);z-index:-1}
+.clip .sq{position:absolute;left:0;right:0;top:50%;transform:translateY(-58%);aspect-ratio:1;background:#fff}
+.clip .sq img{width:100%;height:100%;object-fit:cover}
+.clip .h{position:absolute;top:9px;left:9px;right:9px;display:flex;align-items:center;gap:6px;color:#fff;font-size:clamp(8px,6.4cqw,11px);white-space:nowrap;overflow:hidden;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.clip .h span.d{width:18px;height:18px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1.5px #fff;flex:none;background:#fff}
+.clip .h span.d img{width:100%;height:100%;object-fit:cover}
+.clip .c{position:absolute;left:6px;right:6px;bottom:26px;text-align:center;font-size:clamp(8px,7.6cqw,15px);line-height:1.05;overflow-wrap:anywhere;font-weight:800;text-transform:uppercase;color:#fff;text-shadow:0 0 1px #000,0 1px 0 #000,0 -1px 0 #000,1px 0 0 #000,-1px 0 0 #000,0 2px 6px rgba(0,0,0,.45)}
+.clip .c small{display:block;font-size:clamp(8px,7cqw,12px);color:#ff7aa6;margin-top:3px}
+.clip .scrub{position:absolute;left:9px;right:9px;bottom:10px;height:3px;border-radius:3px;background:rgba(255,255,255,.3)}
+.clip .scrub:before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p,40%);background:#fff;border-radius:3px}
+
+section{padding:150px 0}
+section.pt{padding-top:40px;scroll-margin-top:64px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:64px}
+.sh h2,h2.big{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(52px,6.6vw,100px);line-height:.86;letter-spacing:-.005em;white-space:nowrap}
+.sh .lab{display:block;margin-bottom:14px}
+.sh p{color:var(--mut);font-size:18px;line-height:1.55;max-width:42ch}
+
+.flow{font-size:clamp(30px,3.7vw,54px);line-height:1.18;letter-spacing:-.025em;font-weight:700;max-width:none}
+.flow span{white-space:nowrap}
+.flow sup{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--acc);vertical-align:top;position:relative;top:.2em;margin-right:8px;letter-spacing:0}
+.flow i.s{display:inline-block;width:.28em;height:.28em;border-radius:50%;background:var(--line);margin:0 .32em;vertical-align:middle;font-style:normal}
+
+.bars{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+.bars a{display:grid;grid-template-columns:40px minmax(0,150px) 1fr 72px;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.bars .av{width:40px;height:40px;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.bars .av img{width:100%;height:100%;object-fit:cover}
+.bars .nm{font-weight:650;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bars .tr{height:10px;border-radius:5px;background:var(--bg2);overflow:hidden}
+.bars .tr span{display:block;height:100%;width:var(--w);background:var(--ink);border-radius:5px;transform-origin:left;transform:scaleX(0);transition:transform 1.4s var(--ease)}
+.bars.in .tr span{transform:scaleX(1)}
+.bars a:hover .tr span{background:var(--acc)}
+.bars .au{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:24px;text-align:right}
+.bars-note{display:flex;justify-content:space-between;gap:16px;margin-top:22px}
+
+.strat{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:72px;align-items:center}
+.strat p{font-size:clamp(26px,2.8vw,40px);line-height:1.2;letter-spacing:-.025em;font-weight:600}
+.strat p mark{background:var(--acc);color:#fff;padding:0 .14em;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hub{position:relative;aspect-ratio:1;max-width:460px;justify-self:center;width:100%}
+.hub svg{width:100%;height:100%;overflow:visible}
+.hub .spin{transform-origin:50% 50%;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ───────── HANDOFF · plane tilts down to floor ───────── */
+#strategy{padding-bottom:110px}
+.hinge{position:relative;height:300px;overflow:hidden}
+.hinge .rib{position:absolute;left:-10%;right:-10%;top:50%;height:96px;display:flex;align-items:center;overflow:hidden}
+.hinge .rib.a{background:var(--ink);color:#fff;transform:translateY(-50%) rotate(-4deg);z-index:2;box-shadow:0 30px 50px -30px rgba(26,21,25,.55)}
+.hinge .rib.b{background:var(--acc);color:#fff;transform:translateY(-50%) rotate(3deg);height:64px;opacity:.95}
+.rrow{display:flex;align-items:center;width:max-content;will-change:transform}
+.rrow span.t{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:58px;line-height:1;letter-spacing:.005em;padding:0 30px;white-space:nowrap}
+.rib.b .rrow span.t{font-size:34px;font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.06em}
+.rrow i.tk{width:14px;height:25px;border-radius:3px;background:var(--acc);flex:none;transform:rotate(12deg)}
+.rib.b .rrow i.tk{background:#fff;width:9px;height:16px}
+
+/* ───────── BOTTOM · hy8 Tilted Floor, harmonised ───────── */
+.lab b{color:var(--acc);font-weight:500}
+/* process: rows */
+.pr-rows .step{display:grid;grid-template-columns:240px 1fr 1fr;gap:40px;align-items:start;border-top:1.5px solid var(--ink);padding:28px 0 48px}
+.pr-rows .n{font-size:200px;line-height:.78;letter-spacing:-.01em}
+.pr-rows .step:nth-child(2) .n{color:var(--acc)}
+.pr-rows h3{font-size:30px;font-weight:800;letter-spacing:-.025em;line-height:1.05}
+.pr-rows p{font-size:18px;line-height:1.6;color:var(--mut);max-width:44ch}
+/* pricing: cards */
+.pc-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.plan{background:var(--bg2);border-radius:28px;padding:40px;display:flex;flex-direction:column}
+.plan .tp{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;gap:16px}
+.plan h3{font-size:64px}
+.plan .d{font-size:18px;line-height:1.5;color:var(--mut);margin-bottom:34px;max-width:32ch}
+.plan ol{list-style:none;flex:1;margin-bottom:40px;counter-reset:f}
+.plan li{display:grid;grid-template-columns:44px 1fr;padding:14px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.5}
+.plan li::before{counter-increment:f;content:counter(f,decimal-leading-zero);font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mut);padding-top:4px}
+.plan .btn{align-self:flex-start}
+.plan.x{background:var(--ink);color:var(--bg)}
+.plan.x h3{color:var(--acc)}
+.plan.x .d,.plan.x .lab,.plan.x li::before{color:#b7adb3}
+.plan.x li{border-color:rgba(255,255,255,.14)}
+.plan.x .btn{background:var(--bg);color:var(--ink)}
+.psub{margin-top:36px;color:var(--mut);max-width:70ch;font-size:16px;line-height:1.6}
+/* ideal: grid */
+.id-wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+.id-wrap h2.big{white-space:normal}
+.id-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.id-grid>div{border-top:1.5px solid var(--ink);padding-top:18px}
+.id-grid .n{font-size:96px;line-height:.8;color:var(--acc);display:block;margin-bottom:28px}
+.id-grid p{font-size:clamp(20px,1.9vw,26px);font-weight:700;letter-spacing:-.025em;line-height:1.15;max-width:18ch}
+/* faq */
+.fq-wrap{display:grid;grid-template-columns:4fr 8fr;gap:56px}
+.fq-wrap h2.big{white-space:normal;font-size:clamp(48px,5vw,76px)}
+.qa{border-top:1px solid var(--line)}.qa:last-child{border-bottom:1px solid var(--line)}
+.qa button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:64px 1fr 40px;align-items:center;padding:26px 0;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.qa button:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.qa .qn{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mut);font-weight:400}
+.qa .pm{width:36px;height:36px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;transition:transform .5s var(--ease),background .5s var(--ease),color .5s}
+.qa.open .pm{transform:rotate(45deg);background:var(--acc);color:#fff}
+.qa .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
+.qa.open .a{grid-template-rows:1fr}
+.qa .a>div{overflow:hidden}
+.qa .a p{padding:0 56px 28px 64px;color:var(--mut);font-size:17px;line-height:1.6}
+/* final */
+.final{margin:0 16px;border-radius:36px;background:var(--acc);color:#fff;padding:120px 0 0;overflow:hidden;position:relative}
+.final h2{font-size:clamp(40px,4.7vw,68px);line-height:.88;white-space:nowrap;margin-top:18px}
+.final p{font-size:19px;line-height:1.5;max-width:52ch;margin:22px 0 40px;opacity:.88}
+.final .btn{background:#fff;color:var(--acc)}
+.final .btn .ic{background:var(--ink);color:#fff}
+.final .wmk{font-size:clamp(56px,17.3vw,252px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.4);white-space:nowrap;margin-top:80px;margin-left:-.03em;transform:translateY(18%)}
+footer{padding:48px 0 40px}
+footer .in{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .lk{display:flex;gap:24px;font-size:14px;color:var(--mut)}
+footer .cp{font-size:13px;color:var(--mut)}
+
+.rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+.thumb .rv{opacity:1;transform:none;filter:none;transition:none}
+.thumb .hero h1 .l span{transform:none;transition:none}
+.thumb .plane{transition:none}
+.thumb .hub .spin{animation:none}
+.thumb .bars .tr span{transform:none;transition:none}
+
+.mm{position:fixed;inset:0;z-index:30;background:rgba(247,244,239,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;padding:32px;gap:8px;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+.mm.open{opacity:1;pointer-events:auto}
+.mm a{font-family:'Big Shoulders Display',sans-serif;font-size:56px;font-weight:900;text-transform:uppercase;transform:translateY(30px);opacity:0;transition:all .6s var(--ease)}
+.mm.open a{transform:none;opacity:1}
+.mm .x-b{position:absolute;top:24px;right:24px}
+
+@media (max-width:1100px){
+  .final h2{white-space:normal}
+  .bars{grid-template-columns:1fr}
+  .pr-rows .step{grid-template-columns:160px 1fr}.pr-rows .step p{grid-column:2}
+  .pr-rows .n{font-size:150px}
+}
+@media (max-width:768px){
+  .wrap,.hero .top{padding-left:16px;padding-right:16px}
+  .links,.pill .btn{display:none}
+  .menu-b,.x-b{display:grid}
+  nav.top .in{padding:0 12px}
+  .hero{min-height:820px;padding-top:110px}
+  .hero h1{font-size:96px;white-space:normal;line-height:.82}
+  .hero .row{flex-direction:column;align-items:flex-start;gap:24px}
+  .hero .sub{font-size:18px}
+  .hero .rt .lab{display:none}
+  .stage{height:44%}
+  .prow .clip{width:120px}
+  section{padding:88px 0}
+  .sh{flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:40px}
+  .sh h2,h2.big{white-space:normal}
+  .flow{font-size:26px}
+  .bars a{grid-template-columns:36px minmax(0,1fr) 64px;gap:12px}
+  .bars .av{width:36px;height:36px}
+  .bars .tr{display:none}
+  .bars-note{flex-direction:column}
+  .strat{grid-template-columns:1fr;gap:40px}
+  #strategy{padding-bottom:40px}
+  .hinge{height:200px}
+  .hinge .rib.a{height:68px;top:42%}.hinge .rib.b{height:46px;top:66%}
+  .rrow span.t{font-size:38px;padding:0 20px}
+  .rib.b .rrow span.t{font-size:22px}
+  .pr-rows .step{grid-template-columns:1fr;gap:16px}.pr-rows .step p{grid-column:auto}
+  .pr-rows .n{font-size:120px}
+  .pc-cards{grid-template-columns:1fr}
+  .plan{padding:32px 24px 36px}
+  .plan h3{font-size:52px}
+  .id-wrap,.fq-wrap{grid-template-columns:1fr;gap:28px}
+  .id-grid{grid-template-columns:1fr;gap:28px}
+  .id-grid .n{font-size:72px;margin-bottom:16px}
+  .qa button{grid-template-columns:40px 1fr 40px;font-size:18px}
+  .qa .a p{padding:0 0 24px 40px}
+  .final{margin:0 8px;border-radius:22px;padding-top:80px}
+}
+</style>
+</head>
+<body class="pre">
+<nav class="top"><div class="in">
+  <a href="#top" class="pill wm" aria-label="Clip & Post">clip<span class="p">+</span>post</a>
+  <div class="pill"><div class="links" id="links"></div><a class="btn sm book" target="_blank" rel="noopener">Book a Call <span class="ic"><i class="ph-bold ph-arrow-up-right"></i></span></a><button class="menu-b" id="mb" aria-label="Menu"><i class="ph-bold ph-list"></i></button></div>
+</div></nav>
+<div class="mm" id="mm"></div>
+
+<header class="hero" id="top">
+  <div class="top">
+    <h1><span class="l"><span>Let's</span></span> <span class="l"><span>Go</span></span> <span class="l"><span><em>Viral</em></span></span></h1>
+    <div class="row">
+      <p class="sub" id="sub"></p>
+      <div class="rt"><span class="lab">Scroll to speed up the feed</span><a class="btn book" target="_blank" rel="noopener"><span id="cta1"></span><span class="ic"><i class="ph-bold ph-arrow-up-right"></i></span></a></div>
+    </div>
+  </div>
+  <div class="stage"><div class="plane" id="plane"></div></div>
+</header>
+
+<section id="about"><div class="wrap">
+  <div class="sh rv"><div><span class="lab">01 · The package</span><h2 id="pvH"></h2></div><p id="pvS"></p></div>
+  <p class="flow rv" id="flow"></p>
+</div></section>
+
+<section id="clients" class="pt"><div class="wrap">
+  <div class="sh rv"><div><span class="lab">02 · The roster</span><h2 id="clH"></h2></div><p id="clS"></p></div>
+  <div class="bars rv" id="bars"></div>
+  <div class="bars-note lab rv"><span>Bar length on a log scale</span><span>Sum of 19 listed audiences: <b>41.07M</b></span></div>
+</div></section>
+
+<section id="strategy" class="pt"><div class="wrap">
+  <div class="sh rv"><div><span class="lab">03 · Distribution</span><h2 id="stH"></h2></div></div>
+  <div class="strat"><p class="rv" id="stP"></p><div class="hub rv" id="hub"></div></div>
+</div></section>
+
+<div class="hinge" aria-hidden="true">
+  <div class="rib b"><div class="rrow" id="ribB"></div></div>
+  <div class="rib a"><div class="rrow" id="ribA"></div></div>
+</div>
+
+<section id="process"><div class="wrap">
+  <div class="sh rv"><div><span class="lab"><b>04</b> · Steps</span><h2 id="prH"></h2></div><p id="prS"></p></div>
+  <div class="pr-rows" id="steps"></div>
+</div></section>
+
+<section id="pricing" class="pt"><div class="wrap">
+  <div class="sh rv"><div><span class="lab"><b>05</b> · Plans</span><h2 id="pcH"></h2></div></div>
+  <div class="pc-cards rv" id="plans"></div>
+  <p class="psub rv" id="pcS"></p>
+</div></section>
+
+<section id="ideal" class="pt"><div class="wrap id-wrap">
+  <div class="rv"><span class="lab" style="display:block;margin-bottom:14px"><b>06</b> · Criteria</span><h2 class="big" id="idH"></h2><p id="idS" style="color:var(--mut);font-size:18px;margin-top:16px"></p></div>
+  <div class="id-grid" id="idg"></div>
+</div></section>
+
+<section id="faq" class="pt"><div class="wrap fq-wrap">
+  <div class="rv"><span class="lab" style="display:block;margin-bottom:14px"><b>07</b> · Questions</span><h2 class="big" id="fqH"></h2></div>
+  <div class="rv" id="qas"></div>
+</div></section>
+
+<div class="final" id="cta">
+  <div class="wrap rv"><span class="lab" style="color:inherit;opacity:.75">Next step</span><h2 class="D" id="fH"></h2><p id="fS"></p><a class="btn book" target="_blank" rel="noopener"><span id="fC"></span><span class="ic"><i class="ph-bold ph-arrow-up-right"></i></span></a></div>
+  <div class="wrap"><div class="D wmk" id="wmk"></div></div>
+</div>
+
+<footer><div class="wrap in">
+  <a href="#top" class="wm" style="padding:0">clip<span class="p">+</span>post</a>
+  <div class="lk" id="flk"></div>
+  <div class="cp" id="fcp"></div>
+</div></footer>
+
+<script>
+(function(){
+const K=window.KIT,$=s=>document.querySelector(s),q=new URLSearchParams(location.search),TH=q.has('thumb');
+if(TH){document.documentElement.classList.add('thumb');document.body.classList.remove('pre')}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pad=n=>String(n).padStart(2,'0');
+const AR='<span class="ic"><i class="ph-bold ph-arrow-up-right"></i></span>';
+const btn=l=>`<a class="btn book" href="${K.bookUrl}" target="_blank" rel="noopener"><span>${esc(l)}</span>${AR}</a>`;
+document.querySelectorAll('.book').forEach(a=>a.href=K.bookUrl);
+$('#links').innerHTML=K.nav.map(n=>`<a href="${n.href}">${n.label}</a>`).join('');
+$('#mm').innerHTML=K.nav.map(n=>`<a href="${n.href}">${n.label}</a>`).join('')+`<a class="btn book" href="${K.bookUrl}" target="_blank" rel="noopener" style="font-size:16px;align-self:flex-start;margin-top:20px;font-family:inherit;text-transform:none">${K.hero.cta} ${AR}</a><button class="x-b" id="xb" aria-label="Close"><i class="ph-bold ph-x"></i></button>`;
+$('#mb').onclick=()=>$('#mm').classList.add('open');
+$('#mm').addEventListener('click',e=>{if(e.target.closest('a')||e.target.closest('#xb'))$('#mm').classList.remove('open')});
+$('#sub').innerHTML=`<b>${K.hero.subHighlight}</b> ${K.hero.subRest}`;
+$('#cta1').textContent=K.hero.cta;
+const C=K.clients.list;
+const clip=(c,i)=>`<div class="clip" style="--p:${18+((i*37)%70)}%"><div class="bg" style="background-image:url('${c.img}')"></div><div class="sq"><img src="${c.img}" alt="${esc(c.name)}" loading="lazy"></div><div class="h"><span class="d"><img src="${c.img}" alt=""></span>@${esc(c.name)}</div><div class="c">${esc(c.name)}<small>${c.audience}</small></div><div class="scrub"></div></div>`;
+function build(el,rows){el.innerHTML=rows.map(r=>{const h=r.map(i=>clip(C[i],i)).join('');return `<div class="prow">${h}${h}</div>`}).join('')}
+const order=C.map((_,i)=>i);
+build($('#plane'),[order.slice(0,10).concat([10,11]),order.slice(7).concat([0,1,2]),[12,3,15,6,18,9,0,13,4,16,7,1]]);
+// handoff ribbons: step titles from KIT.process, previewing How It Works
+const ribA=K.process.steps.map(s=>`<span class="t">${esc(s.title)}</span><i class="tk"></i>`).join('');
+const ribB=[K.process.heading,K.pricing.heading,K.ideal.heading,'FAQ'].map(s=>`<span class="t">${esc(s)}</span><i class="tk"></i>`).join('');
+$('#ribA').innerHTML=(ribA).repeat(4)+(ribA).repeat(4);
+$('#ribB').innerHTML=(ribB).repeat(4)+(ribB).repeat(4);
+// motion engine (rw3): rows alternate, base speed + scroll velocity boost; ribbons ride the same engine
+const rows=[...document.querySelectorAll('.plane .prow')].map((r,i)=>({r,x:-(i*230+80),dir:i%2?1:-1,w:0,k:1}));
+rows.push({r:$('#ribA'),x:-120,dir:-1,w:0,k:1.5},{r:$('#ribB'),x:-300,dir:1,w:0,k:1});
+function measure(){rows.forEach(o=>o.w=o.r.scrollWidth/2)}
+measure();addEventListener('resize',measure);
+rows.forEach(o=>{if(!o.w)return;o.x=((o.x%o.w)-o.w)%o.w;o.r.style.transform=`translateX(${o.x}px)`});
+if(!TH){
+  let last=performance.now(),lastY=scrollY,boost=0,t0=last;
+  (function f(t){
+    const dt=Math.min(50,t-last);last=t;
+    const y=scrollY,v=Math.abs(y-lastY)/Math.max(dt,1);lastY=y;
+    boost+=(Math.min(v*1.6,4)-boost)*.08;
+    const intro=Math.max(0,1-(t-t0)/2200);
+    const sp=.045*(1+boost+intro*7);
+    rows.forEach(o=>{if(!o.w)return;o.x+=o.dir*sp*o.k*dt;if(o.x<=-o.w)o.x+=o.w;if(o.x>0)o.x-=o.w;o.r.style.transform=`translate3d(${o.x}px,0,0)`});
+    requestAnimationFrame(f);
+  })(last);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{document.body.classList.remove('pre');document.documentElement.classList.add('on')}));
+}
+// top sections (rw3)
+$('#pvH').textContent=K.provide.heading;$('#pvS').textContent=K.provide.sub;
+$('#flow').innerHTML=K.provide.items.map((s,i)=>`<span><sup>${pad(i+1)}</sup>${esc(s)}</span>`).join('<i class="s"></i>');
+$('#clH').textContent=K.clients.heading;$('#clS').textContent=K.clients.sub;
+const val=a=>{const n=parseFloat(a);return a.includes('M')?n*1e6:n*1e3};
+const lo=Math.log10(val(C[C.length-1].audience)),hi=Math.log10(val(C[0].audience));
+const rowsB=C.map(c=>`<a href="${c.url}" target="_blank" rel="noopener"><span class="av"><img src="${c.img}" alt="${esc(c.name)}" loading="lazy"></span><span class="nm">${esc(c.name)}</span><span class="tr"><span style="--w:${(12+88*(Math.log10(val(c.audience))-lo)/(hi-lo)).toFixed(1)}%"></span></span><span class="au">${c.audience}</span></a>`);
+$('#bars').innerHTML=`<div>${rowsB.slice(0,10).join('')}</div><div>${rowsB.slice(10).join('')}</div>`;
+$('#stH').textContent=K.strategy.heading;
+$('#stP').innerHTML=`${esc(K.strategy.before)} <mark>${esc(K.strategy.highlight)}</mark> ${esc(K.strategy.after)}`;
+let s='<svg viewBox="0 0 400 400"><g class="spin">';
+for(let i=0;i<50;i++){const ring=i<20?0:1,n=ring?30:20,k=ring?i-20:i,R=ring?182:128,a=k/n*Math.PI*2;const x=200+R*Math.cos(a),y=200+R*Math.sin(a);
+s+=`<line x1="200" y1="200" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(26,21,25,.10)" stroke-width="1"/><rect x="${(x-5).toFixed(1)}" y="${(y-9).toFixed(1)}" width="10" height="18" rx="2.5" fill="${i%7===3?'#e5195e':'#1a1519'}" transform="rotate(${(a*180/Math.PI+90).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`}
+s+=`</g><circle cx="200" cy="200" r="58" fill="#e5195e"/><text x="200" y="196" text-anchor="middle" fill="#fff" font-family="Big Shoulders Display" font-weight="900" font-size="30">MAIN</text><text x="200" y="222" text-anchor="middle" fill="#fff" font-family="IBM Plex Mono" font-size="11" letter-spacing="1">CHANNEL</text></svg>`;
+$('#hub').innerHTML=s;
+// bottom sections (hy8 layouts)
+$('#prH').textContent=K.process.heading;$('#prS').textContent=K.process.sub;
+$('#steps').innerHTML=K.process.steps.map((st,i)=>`<div class="step rv"><span class="D n">${i+1}</span><h3>${esc(st.title)}</h3><p>${esc(st.body)}</p></div>`).join('');
+$('#pcH').textContent=K.pricing.heading;$('#pcS').textContent=K.pricing.sub;
+$('#plans').innerHTML=K.pricing.plans.map(p=>`<div class="plan ${p.featured?'x':''}"><div class="tp"><h3 class="D">${esc(p.name)}</h3><span class="lab">${p.featured?'Full package':'Editing only'}</span></div><p class="d">${esc(p.desc)}</p><ol>${p.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ol>${btn(p.cta)}</div>`).join('');
+$('#idH').textContent=K.ideal.heading;$('#idS').textContent=K.ideal.sub;
+$('#idg').innerHTML=K.ideal.items.map((t,i)=>`<div class="rv"><span class="D n">${pad(i+1)}</span><p>${esc(t)}</p></div>`).join('');
+$('#fqH').textContent=K.faq.heading;
+$('#qas').innerHTML=K.faq.items.map((f,i)=>`<div class="qa"><button aria-expanded="false" aria-controls="qa${i}"><span class="qn">${pad(i+1)}</span><span>${esc(f.q)}</span><span class="pm"><i class="ph-bold ph-plus"></i></span></button><div class="a" id="qa${i}"><div><p>${esc(f.a)}</p></div></div></div>`).join('');
+document.querySelectorAll('.qa button').forEach(b=>b.addEventListener('click',()=>{const o=b.parentElement.classList.toggle('open');b.setAttribute('aria-expanded',o)}));
+$('#fH').textContent=K.finalCta.heading;$('#fS').textContent=K.finalCta.sub;$('#fC').textContent=K.finalCta.cta;
+$('#wmk').textContent=K.hero.headline;
+$('#flk').innerHTML=K.footer.links.map(l=>`<a href="#top">${l}</a>`).join('');
+$('#fcp').textContent=K.footer.copy;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+})();
+</script>
 </body>
 </html>
