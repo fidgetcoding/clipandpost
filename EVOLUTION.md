@@ -32,7 +32,7 @@ All on 2026-11-02.
 | About 18:25 | Lab round 1: 20 directions in 5 families, three picks | Private note |
 | 18:52 | Lab round 2 half built: 20 refinements, after a restart on a spend limit | Private note |
 | 19:19 | Round 3 merge shipped: Tilted Plane on top, Tilted Floor below, every button on my booking page | `65f4978` |
-| 19:57 | Logo lab (54 options), x-height wordmark, c&p favicon, README, build history, AGENTS, MIT license. Repo public | `255703e` |
+| 19:57 | Logo lab (54 options), x-height wordmark, c&p favicon, README, AGENTS, MIT license. Repo public | `255703e` |
 | Nov 5 | Live page checked against `main`: identical | My run, `curl` |
 
 ## 4. Round by round
@@ -102,7 +102,7 @@ All on 2026-11-02.
 - **Broke:** two of the designer agents shared a scratch folder, and one ran the other's generator script. Once the nav got the new wordmark, the pill's spacing pushed the ampersand away from its letters. And the favicon turned out to be the old builder's heart logo, still hanging around from the clone.
 - **Fixed:** the whole grid re-checked afterward, all 54 rendering on both screens with zero errors. The nav pill's gap set to zero. A new `c&p` favicon on an ink tile, at 64, 180 and `.ico`.
 - **Picked:** **x-height**, lowercase `clip&post` set tight as one word, with the ampersand shrunk to lowercase height in rose. "i gave my pick, update, push, make a git for it, lock it in. make the git public"
-- **Built after the pick:** the wordmark in the nav and the footer, a first-person README, a build history, AGENTS.md, the MIT license, and the public repo with the live site as its homepage (`255703e`).
+- **Built after the pick:** the wordmark in the nav and the footer, a first-person README, AGENTS.md, the MIT license, and the public repo with the live site as its homepage (`255703e`).
 - **Tested:** the same live checks at 1440 px and 390 px, all passing again, and the favicons return 200. The full history was searched for names that shouldn't be public: zero hits.
 - **Wanted next:** a banner for the repo, and the old .com pointed somewhere alive.
 
@@ -154,5 +154,4 @@ There's no CI. It's static files with nothing to build, so the checks above are 
 ## 9. Sources
 
 - Commits: `git log` of `fidgetcoding/clipandpost`.
-- [docs/BUILD-HISTORY.md](docs/BUILD-HISTORY.md): my first write-up, from the same day.
 - Private, kept by me: three session notes dated November 2, 2026 (the clone and lab round 1, the redesign shipping, the wordmark and the public repo).
