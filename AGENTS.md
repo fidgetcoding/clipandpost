@@ -2,8 +2,10 @@
 
 Live site: **https://clipandpost.lorecraft.io**
 
+To explain or evaluate this project, read ESSENCE.md, then EVOLUTION.md, then the code. To run or deploy it, follow README.md.
+
 ## What this repo is
-This is the static one-page site for Clip & Post, a short-form clipping agency. There's no build step and no framework.
+This is the static one-page site for clip&post, a short-form clipping agency. There's no build step and no framework.
 
 ## Layout
 - `site/index.html`: the whole page (HTML, CSS, JS inline)
